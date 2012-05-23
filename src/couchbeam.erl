@@ -225,6 +225,11 @@ db_exists(#server{options=IbrowseOpts}=Server, DbName) ->
 
 %% @doc Create a database and a client for connectiong to it.
 %% @equiv create_db(Server, DbName, [], [])
+create_db(#db{server=Server, name=DbName}) ->
+    create_db(Server, DbName, [], []).
+
+%% @doc Create a database and a client for connectiong to it.
+%% @equiv create_db(Server, DbName, [], [])
 create_db(Server, DbName) ->
     create_db(Server, DbName, [], []).
 
